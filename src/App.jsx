@@ -1,19 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import WebApp from "@twa-dev/sdk";
+import "./App.css";
 
 function App() {
+  const [username, setUsername] = useState("...");
+
   useEffect(() => {
-    WebApp.ready(); // Сообщаем Telegram, что всё загружено
+    WebApp.ready();
+    if (WebApp.initDataUnsafe?.user?.username) {
+      setUsername(WebApp.initDataUnsafe.user.username);
+    }
   }, []);
 
-  const handleClick = () => {
-    WebApp.sendData("Hello bro");
-  };
-
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Привет, {WebApp.initDataUnsafe?.user?.first_name || "гость"}!</h1>
-      <button onClick={handleClick}>Отправить в бота</button>
+    <div className="game-container">
+      <h2 className="username">👤 @{username}</h2>
+      <div className="moving-box"></div>
     </div>
   );
 }

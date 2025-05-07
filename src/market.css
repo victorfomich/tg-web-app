@@ -1,0 +1,105 @@
+.market-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .market-container {
+    background: #fdf1d2;
+    border-radius: 20px;
+    padding: 16px;
+    width: 90%;
+    max-width: 360px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+  
+  .market-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .market-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #5b3b2b;
+  }
+  
+  .close-button {
+    background: #ff4e4e;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .market-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .market-item {
+    background: #8a4d2e;
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+  }
+  
+  .item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin-right: 12px;
+  }
+  
+  .placeholder.blue { background: linear-gradient(to bottom, #3a9be8, #1e60b8); }
+  .placeholder.purple { background: linear-gradient(to bottom, #c76ce2, #8133ad); }
+  .placeholder.yellow { background: linear-gradient(to bottom, #f6e469, #d5bc29); }
+  .placeholder.green { background: linear-gradient(to bottom, #5ce083, #2eaf5e); }
+  .placeholder.gray { background: linear-gradient(to bottom, #cccccc, #999999); }
+  
+  .item-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .reward {
+    background: #27ae60;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .price {
+    background: #f39c12;
+    border-radius: 8px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .price img {
+    width: 16px;
+    margin-right: 5px;
+  }

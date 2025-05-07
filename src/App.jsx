@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import WebApp from "@twa-dev/sdk";
+import Market from "./Market";
 import "./App.css";
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
       const cat = document.getElementById("cat");
       if (!cat) return;
 
-      const screenWidth = window.innerWidth - 64; // ширина минус размер кота
-      const screenHeight = window.innerHeight - 64 - 70; // высота минус размер кота и кнопка
+      const screenWidth = window.innerWidth - 64;
+      const screenHeight = window.innerHeight - 64 - 70;
 
       const newX = Math.random() * screenWidth;
       const newY = Math.random() * screenHeight;
@@ -25,7 +26,6 @@ function App() {
       cat.style.transform = `translate(${newX}px, ${newY}px)`;
     };
 
-    // первое движение + повтор каждые 2 секунды
     moveCatRandomly();
     const interval = setInterval(moveCatRandomly, 2000);
     return () => clearInterval(interval);
@@ -43,16 +43,8 @@ function App() {
         <button className="market-button" onClick={() => setShowMarket(true)}>Маркет</button>
       </div>
 
-      {/* Модалка */}
-      {showMarket && (
-        <div className="modal">
-          <div className="modal-content">
-            <h3>🛍️ Маркет</h3>
-            <p>Скоро тут будут товары</p>
-            <button onClick={() => setShowMarket(false)}>Назад</button>
-          </div>
-        </div>
-      )}
+      {/* Маркет окно */}
+      {showMarket && <Market onClose={() => setShowMarket(false)} />}
     </div>
   );
 }
